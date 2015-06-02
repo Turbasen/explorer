@@ -69,8 +69,6 @@ var mapOnMoveend = function() {
         size: "m"
       };
 
-      console.log(JSON.stringify(icon));
-
       var marker = L.marker(data.documents[i].geojson.coordinates[0].reverse(), {
         icon: L.MakiMarkers.icon(icon)
       });
