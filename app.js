@@ -1,3 +1,5 @@
+'use strict';
+
 var topo =  L.tileLayer('http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2&zoom={z}&x={x}&y={y}', {
     maxZoom: 16,
     attribution: '<a href="http://www.statkart.no/">Statens kartverk</a>'
