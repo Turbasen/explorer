@@ -31,13 +31,15 @@ var map = L.map('map', {
     layers: [layers['Topo 2']],
     scrollWheelZoom: false,
     center: [60.39749058941908, 5.329399108886719],
-    zoom: 12
+    zoom: 12,
+    zoomControl: false,
 });
 
 var markers = L.layerGroup().addTo(map);
 var trails = L.layerGroup().addTo(map);
 
-L.control.layers(layers, overlays, { position: 'topleft' }).addTo(map);
+L.control.zoom({ position: 'topright' }).addTo(map);
+L.control.layers(layers, overlays, { position: 'topright' }).addTo(map);
 
 // Fetch markers from Nasjonal Turbase
 var mapOnMoveend = function() {
