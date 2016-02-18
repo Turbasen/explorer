@@ -115,12 +115,16 @@ var getFilterQuery = function() {
 
   query.bbox = map.getBounds().toBBoxString();
 
-  if ($('input[name="difficulty"]:checked').length) {
-    query.gradering = $('input[name="difficulty"]:checked').val();
+  if ($('input[name="difficulty[]"]:checked').length === 1) {
+    query.gradering = $('input[name="difficulty[]"]:checked').val();
+  } else if ($('input[name="difficulty[]"]:checked').length > 1) {
+    query.gradering = $('input[name="difficulty[]"]:checked').map(function() { return $(this).val() }).get();
   }
 
-  if ($('input[name="type"]:checked').length) {
-    query.tags = $('input[name="type"]:checked').val();
+  if ($('input[name="type[]"]:checked').length === 1) {
+    query.tags = $('input[name="type[]"]:checked').val();
+  } else if ($('input[name="type[]"]:checked').length > 1) {
+    query.tags = $('input[name="type[]"]:checked').map(function() { return $(this).val() }).get();
   }
 
   return query;
