@@ -129,5 +129,3 @@ var getFilterQuery = function() {
 
   return query;
 };
-
-map.fire('moveend');
