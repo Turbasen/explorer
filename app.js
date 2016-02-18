@@ -102,6 +102,13 @@ var markerOnClick = function() {
 
 // Search / filter sidebar
 $('.sidebar input').on('change', function() { map.fire('moveend'); });
+$('.sidebar input').on('change', function() {
+  var filter = JSON.parse(JSON.stringify(getFilterQuery()));
+  delete filter.bbox;
+
+  $('#query').val(decodeURIComponent($.param(filter)));
+});
+
 var sidebar = L.control.sidebar('sidebar').addTo(map);
 var getFilterQuery = function() {
   var query = {};
