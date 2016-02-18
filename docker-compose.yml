@@ -1,5 +1,5 @@
 dev:
-    image: nginx:1.9
+    image: nginx:latest
     ports:
         - "80"
     volumes:
